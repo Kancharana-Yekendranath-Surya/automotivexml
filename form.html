@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>registration form</title>
+<script>
+function validate()
+{
+var n=f.name.value;
+var pwd=f.pwd.value;
+var pno=f.pno.value;
+var e=f.email.value;
+var e1=e.indexOf("@");
+var dot=e.indexOf(".");
+var re= new RegExp("^[A-Za-z][a-zA-Z]+$");
+if(!n.match(re))
+{
+alert("Name should contain only alphabets");
+}
+else
+{
+if(n.length<6)
+{
+alert("name should be grater than 6 characters");
+}
+}
+if(pwd.length<6)
+{
+alert("password should contain atleast 6 characters");
+}
+if(pno.length!=10)
+{
+alert("phone number should contain exactly 10 characters");
+}
+if(e1<dot||dot<e1+2||(dot+2)>e.length)
+{
+alert("invalid email");
+}
+}
+</script>
+</head>
+<body>
+<h1>Registration form</h1>
+<form name="f">
+<pre>
+Name:<input type="text"name="name"><br>
+Password:<input type="password" name="pwd"><br>
+phone number:<input type="text" name="pno"><br>
+email:<input type="email" name="email"><br>
+gender:<input type="radio" name="r1">Male<br>
+<input type="radio" name="r2">Female<br>
+Languages known:<input type="checkbox" name="c1">C
+<input type="checkbox" name="c2">C++
+<input type="checkbox" name="c3">java
+<input type="checkbox" name="c4">python
+<br>
+Address:<textarea name="text" rows="5"cols="5"></textarea>
+<input type="submit" value="submit" name="submit" onclick="validate()">
+<input type="reset" name="reset"><br>
+</pre>
+</form>
+</body>
+</html>
